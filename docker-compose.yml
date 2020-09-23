@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:12.1-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+
+  web:
+    build: .
+    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app/
+      - /var/run/docker.sock:/var/run/docker.sock  
+    ports:
+      - 80:8000
+    environment:
+      - DATABASE_URI:${DATABASE_URI}
+
+volumes:
+  postgres_data:

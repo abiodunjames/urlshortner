@@ -1,0 +1,16 @@
+databases==0.3.2
+asyncpg==0.21.0
+databases[postgresql]==0.3.2
+databases[sqlite]==0.3.2
+fastapi==0.61.1
+SQLAlchemy==1.3.19
+uvicorn==0.11.8
+httpx==0.14.3
+python-dotenv==0.14.0
+psycopg2-binary==2.8.6
+
+# dev
+requests==2.24.0
+aiosqlite==0.15.0
+pytest==6.0.2
+pytest-asyncio==0.14.0
