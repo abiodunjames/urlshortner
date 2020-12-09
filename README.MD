@@ -1,4 +1,4 @@
-# Usage
+# How to run
 
 - Configure `tier.app` hostname 
 
